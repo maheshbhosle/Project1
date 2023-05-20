@@ -11,7 +11,7 @@ const Logout = () => {
 
     const navigate = useNavigate();
     useEffect(() => {
-        fetch('/Logout', {
+        fetch('/api/Logout', {
             method: "GET",
             headers: { // Accept: "application/json",
                 "Content-Type": "application/json"
@@ -19,7 +19,7 @@ const Logout = () => {
             // credentials: "include"
         }).then((res) => {
             dispatch({type: "USER", payload: false})
-            navigate("/Home");
+            navigate("/api/Home");
             if (res.status !== 200) {
                 const error = new Error(res.error);
                 throw error;

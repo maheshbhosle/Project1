@@ -4,7 +4,7 @@ const Contact = () => {
     const [userData, setUserData] = useState({name: "", email: "", phone: "", message: ""});
     const userContact = async () => {
         try {
-            const res = await fetch('/getdata', {
+            const res = await fetch('/api/getdata', {
                 method: "GET",
                 header: {
                     "Content-Type": "application/json"
@@ -42,7 +42,7 @@ const Contact = () => {
     const contactForm = async (e) => {
         e.preventDefault();
         const {name, email, phone, message} = userData;
-        const res = await fetch('/contact', {
+        const res = await fetch('/api/contact', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

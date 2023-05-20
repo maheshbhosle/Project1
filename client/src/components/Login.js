@@ -13,7 +13,7 @@ const Login = () => {
 
     const loginUser = async (e) => {
         e.preventDefault();
-        const res = await fetch('/signin', {
+        const res = await fetch('/api/signin', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -28,7 +28,7 @@ const Login = () => {
         } else {
             dispatch({type: "USER", payload: true})
             window.alert("Login succefull!")
-            navigate("/home");
+            navigate("/api/home");
         }
 
     }

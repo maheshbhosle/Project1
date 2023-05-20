@@ -5,7 +5,7 @@ const Todo = () => {
     const navigate = useNavigate();
     const callTodo = async () => {
         try {
-            const res = await fetch('/Todo', {
+            const res = await fetch('/api/Todo', {
                 method: "GET",
                 header: {
                     Accept: "application/json",
@@ -21,7 +21,7 @@ const Todo = () => {
             }
         } catch (err) {
             console.log("error here")
-            navigate("/Login");
+            navigate("/api/Login");
         }
     }
     useEffect(() => {
